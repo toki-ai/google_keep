@@ -2,16 +2,28 @@ import React from "react";
 import Heading from "./Heading"; 
 import Footer from "./Footer";
 import Note from "./Note";
+import CreateNote from "./CreateNote";
+import notes from "../node.js";
 
-function app(){
+function App(){
+    const [note, setNote] = React.useState([...notes]);
+
+    function deleteNote(id){
+        setNote(note.filter((note,index) => {return index !== id }));
+    }
+
+    function addNewNode(newNode){
+        setNote(pre => {return [...pre, newNode]});
+    }
+    
     return(
         <div>
             <Heading /> 
-            <Note /> 
-            <Note/>
+            <CreateNote onAdd={addNewNode} length={note.length}/>
+            {note.map((note, index) => <Note key={note.key} id={index} note={note} onDelete={deleteNote}/>)} 
             <Footer /> 
         </div>
     );
 }
 
-export default app;
+export default App;
