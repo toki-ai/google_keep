@@ -8,13 +8,20 @@
   }
   body {
     background: #eee;
-    padding: 0 16px;
+    background-image: url("https://www.transparenttextures.com/patterns/cubes.png");
+    padding: 0px;
+  }
+  div .container{
+    display: flex;
+    flex-direction: column;
+    width:100vw;
   }
   
   header {
+    width: 100vw;
     background-color: #f5ba13;
-    margin: auto -16px;
-    padding: 16px 32px;
+    margin: auto 0;
+    padding: 5px 10px;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
   }
   
@@ -22,15 +29,24 @@
     color: #fff;
     font-family: "McLaren", cursive;
     font-weight: 200;
+    display: inline-block;
   }
   
+  header .light{
+    color: white;
+    width: 36px;
+  }
+
+  .content{
+    min-height: 75vh;
+    max-width: 100vw;
+  }
+
   footer {
-    position: absolute;
     text-align: center;
-    bottom: 0;
     width: 100%;
     height: 2.5rem;
-    left: 0;
+    margin-top: 20px;
   }
   
   footer p {
@@ -88,18 +104,16 @@
     font-family: inherit;
     resize: none;
   }
-  form button {
-    position: absolute;
-    right: 18px;
-    bottom: -18px;
-    background: #f5ba13;
-    color: #fff;
-    border: none;
-    border-radius: 50%;
-    width: 36px;
-    height: 36px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
-    cursor: pointer;
-    outline: none;
+
+  button .addIcon{
+      color: #f5ba13;
+      border-radius: 50%;
+      width: 36px;
+      height: 36px;
+      cursor: pointer;
+      position: absolute;
+      right: 18px;
+      bottom: -18px;
+      outline: none;
+      background-color: white;
   }
-  

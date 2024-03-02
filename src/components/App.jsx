@@ -15,13 +15,15 @@ function App(){
     function addNewNode(newNode){
         setNote(pre => {return [...pre, newNode]});
     }
-    
+
     return(
-        <div>
+        <div className='container'>
             <Heading /> 
-            <CreateNote onAdd={addNewNode} length={note.length}/>
-            {note.map((note, index) => <Note key={note.key} id={index} note={note} onDelete={deleteNote}/>)} 
-            <Footer /> 
+            <div className='content'>
+                <CreateNote onAdd={addNewNode} length={notes.length}/>
+                {note.map((note, index) => <Note key={note.key} id={index} note={note} onDelete={deleteNote}/>)} 
+            </div>
+            <Footer className='footer' />
         </div>
     );
 }
